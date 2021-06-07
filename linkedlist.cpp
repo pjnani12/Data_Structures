@@ -57,6 +57,66 @@ void enqueue(int value){
     tmp->next=new_node;
     return;
 }
+void dequeue(){ // deletion at head
+    Node* tmp=head;
+    head=head->next;
+    free(tmp);
+    tmp=NULL;
+    return;
+}
+void deletion_at_tail(){
+    Node* tmp=head;
+    Node* last=head;
+    if(tmp == NULL){
+        return;
+    }
+    while(tmp->next->next != NULL){
+        tmp=tmp->next;
+    }
+    last=tmp->next;
+    tmp->next=NULL;
+    free(last);
+    last=NULL;
+    return;
+}
+void delete_at_position(int pos){
+    Node* tmp=head;
+    Node* add_car=head;
+    int count=1;
+    if(pos==1){
+        head=head->next;
+        free(tmp);
+        tmp=NULL;
+        return;
+    }
+    while(count<=pos-2){
+        count++;
+        tmp=tmp->next;
+    }
+    add_car=tmp->next;
+    tmp->next=add_car->next;
+    free(add_car);
+    add_car=NULL;
+    return;
+}
+void delete_by_value(int value){
+    Node* tmp=head;
+    Node* prev=head;
+    if(tmp->data == value){
+        head=head->next;
+        free(tmp);
+        tmp=NULL;
+        return;
+    }
+    while(tmp->data != value){
+        prev=tmp;
+        tmp=tmp->next;
+    }
+    prev->next=tmp->next;
+    free(tmp);
+    tmp=NULL;
+    return;
+}
 int main() {
 	//cout<<sizeof(head)<<endl;
 	enqueue(10); // insert at tail
@@ -64,6 +124,13 @@ int main() {
 	enqueue(30);
 	insert_at_head(40);
 	inset_at_position(1,50);//position, value
+	dequeue();
+	deletion_at_tail();
+	delete_at_position(1);//position
+	insert_at_head(30);
+	insert_at_head(20);
+	enqueue(90);
+	delete_by_value(20);//position
 	display();
 	return 0;
 }
