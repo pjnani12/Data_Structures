@@ -4,10 +4,9 @@ class marks{
     int *total;
     public:
     marks(){
-        total=NULL;
-    }
-    marks(int a){
         total=new int;
+    }
+    void set_val(int a){
         *total=a;
     }
     ~marks(){
@@ -18,9 +17,15 @@ class marks{
     }
 };
 int main() { 
-     marks m(10);
+     marks m;
+     m.set_val(10);
      m.print();
      marks j=m;//both the objects are pointing to same address
-     j.print();
+     cout<<"j value";j.print();
+     cout<<"m value";m.print();
+     cout<<"changing only j value to 99"<<endl;
+     j.set_val(99);
+     cout<<"j value";j.print();
+     cout<<"m value";m.print(); //both j & m values are changed
      return 0;
 }
