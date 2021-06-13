@@ -17,16 +17,36 @@ void Bubble_sort(int arr[], int size){
         cout<<arr[i]<<" ";
     }
 }
-
+void Selection_sort(int arr[],int size){
+    int index;
+    int tmp;
+    for(int i=0;i<size-1;i++){
+        index=i;
+        for(int j=i+1;j<size;j++){
+            if(arr[index]>arr[j]){
+                index=j;
+            }
+        }
+        tmp=arr[i];
+        arr[i]=arr[index];
+        arr[index]=tmp;
+    }
+    cout<<"Selection sort ";
+    for(int i=0;i<size;i++){
+        cout<<arr[i]<<" ";
+    }
+}
 int main(){
 	int arr[]={9,1,5,7,3,8};
 	int size;
 	size=sizeof(arr)/sizeof(arr[0]);
-	cout<<size<<endl;
+	cout<<"size "<<size<<endl;
 	for(int i=0;i<size;i++){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
 	Bubble_sort(arr,size);
+	cout<<endl;
+	Selection_sort(arr,size);
 	return 0;
 }
