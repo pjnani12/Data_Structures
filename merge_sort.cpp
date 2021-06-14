@@ -42,7 +42,7 @@ void Merge_sort(int arr[],int l,int r){
     if(l>=r){
         return;
     }
-    int m=l+(r-l)/2;
+    int m=(r+l)/2;
     Merge_sort(arr,l,m);
     Merge_sort(arr,m+1,r);
     merge(arr,l,m,r);
