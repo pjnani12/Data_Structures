@@ -47,19 +47,17 @@ void Merge_sort(int arr[],int l,int r){
     Merge_sort(arr,m+1,r);
     merge(arr,l,m,r);
 }
-void printArray(int A[], int size){
-    for (int i = 0; i < size; i++)
-        cout << A[i] << " ";
-}
 int main(){
-	int arr[]={9,1,5,7,3,8};
+	int arr[]={9,1,5,7,3,8,95,11,25};
 	int size;
 	size=sizeof(arr)/sizeof(arr[0]);
 	cout<<"size "<<size<<endl;
-	printArray(arr, size);
+	for (int i = 0; i < size; i++)
+        cout << arr[i] << " ";
     cout<<endl;
 	Merge_sort(arr,0,size-1);
 	cout<<"Merge_sort "<<endl;
-	printArray(arr, size);
+	for (int i = 0; i < size; i++)
+        cout << arr[i] << " ";
 	return 0;
 }
