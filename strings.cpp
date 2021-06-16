@@ -19,11 +19,46 @@ string reverse(char *s){
     }
     return rev;
 }
-
+void word_reverse(char *s){
+    string str=s;
+    string rev="";
+    int n=strlen(s);
+    for(int i=0;i<=n;i++){
+        if(str[i]==' '|| str[i]=='\0'){
+            int size=rev.length();
+            for(int i=size-1;i>=0;i--){
+                cout<<rev[i];
+            }
+            cout<<" ";
+            rev="";
+        }else{
+            rev=rev+str[i];
+        }
+    }
+}
+void reverse_words(char *s){
+    string str=s;
+    string rev="";
+    vector<string> str_array;
+    int n=strlen(s);
+    for(int i=0;i<=n;i++){
+        if(str[i]==' '|| str[i]=='\0'){
+            str_array.push_back(rev);
+            rev="";
+        }else{
+            rev=rev+str[i];
+        }
+    }
+    for(auto it=str_array.rbegin();it!=str_array.rend();++it){
+        cout<<*it<<" ";
+    }
+}
 int main() {
-    char str[]="jagadeesh";
+    char str[]="world car free day";
     //string rtn=removeStr(str,'e');
-    string rtn=reverse(str);
-    cout<<rtn;
+    //string rtn=reverse(str);
+    //cout<<rtn;
+    //word_reverse(str);
+    reverse_words(str);
 	return 0;
 }
