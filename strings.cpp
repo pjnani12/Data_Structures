@@ -52,9 +52,31 @@ void reverse_words(char *s){
     for(auto it=str_array.rbegin();it!=str_array.rend();++it){
         cout<<*it<<" ";
     }
+    cout<<endl;
+    cout<<"unique words"<<endl;
+    for(int i = 0;i < str_array.size();i++){
+        int cnt = 0;
+        for(int j = 0;j < str_array.size() && cnt < 2;j++){
+            if(str_array[i] == str_array[j])
+                cnt++;
+        }
+        if(cnt == 1) 
+            cout << str_array[i] <<" ";
+    }
+    cout<<endl;
+    cout<<"Distinct words"<<endl;
+    for(int i = 0;i < str_array.size();i++){
+        int j;
+        for(j = 0;j < i;j++){
+            if(str_array[i] == str_array[j])
+                break;
+        }
+            if(i == j) 
+            cout << str_array[i] <<" ";
+    }
 }
 int main() {
-    char str[]="world car free day";
+    char str[]="world car free day car day";
     //string rtn=removeStr(str,'e');
     //string rtn=reverse(str);
     //cout<<rtn;
