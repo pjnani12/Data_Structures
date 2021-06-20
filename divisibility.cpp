@@ -29,6 +29,10 @@ int main() {
     check=check<<3;
 	(n==check)?cout<<"divisible by 8 : ":cout<<"NOT divisible by 8 : "<<endl;
     
+	((n&1)==0)?cout<<"divisible by 2 : ":cout<<"NOT divisible by 2 : "<<endl;
+	((n&3)==0)?cout<<"divisible by 4 : ":cout<<"NOT divisible by 4 : "<<endl;
+	((n&7)==0)?cout<<"divisible by 8 : ":cout<<"NOT divisible by 8 : "<<endl;
+	((n&15)==0)?cout<<"divisible by 16 : ":cout<<"NOT divisible by 16 : "<<endl;
     isdivisibleby9(n)? cout<<"divisible by 9":cout<<"not divisble by 9"<<endl;
     isdivisibleby17(n)? cout<<"divisible by 17":cout<<"not divisble by 17"<<endl;
     
