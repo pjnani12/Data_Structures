@@ -25,7 +25,7 @@ void subString(string s, int n){
                 else
                     small[str[i] - 'a']++;
             }
-            balanced(small,caps)?cout<<str<<" ":cout<<"";
+            //balanced(small,caps)?cout<<str<<" ":cout<<"";
             if(balanced(small,caps)){
                 if(smallSize>(str.length())){
                     smallSize=str.length();
@@ -34,10 +34,14 @@ void subString(string s, int n){
             }
 		}
 	}
-	cout<<endl<<"answer is:: "<<ans<<endl;
+	
+	if(ans.empty()){
+	    cout<<"-1"<<ans<<endl;
+	}else{
+	    cout<<"answer is:: "<<ans<<endl;
+	}
 	
 }
-
 int main(){
 	string s = "azABaabba";
 	subString(s,s.length());
