@@ -14,7 +14,7 @@ class marks{
     }
     void print(){
         cout<<*total<<endl;
-    }
+    } 
 };
 int main() { 
      marks m;
